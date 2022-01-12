@@ -4,7 +4,7 @@ from utils.models import BaseModel
 
 class File(BaseModel):
     folder = models.ForeignKey('folders.Folder', on_delete=models.CASCADE, related_name='files')
-    file_instance = models.FileField()
+    django_filefield = models.FileField()
 
     class Meta:
         db_table = 'FILE'
