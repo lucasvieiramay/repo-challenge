@@ -1,5 +1,4 @@
 import factory
-import random
 from users.models import User
 
 
@@ -8,4 +7,4 @@ class UserFactory(factory.django.DjangoModelFactory):
         model = User
 
     full_name = factory.Faker("name")
-    email = factory.LazyAttribute(lambda obj: '%s@triven.com' % obj.social_security_number)
+    email = factory.LazyAttribute(lambda obj: '%s@gmail.com' % obj.full_name)
