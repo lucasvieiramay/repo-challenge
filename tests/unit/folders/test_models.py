@@ -7,7 +7,7 @@ from folders.models import Folder
 pytestmark = pytest.mark.django_db
 
 
-class TestUserModel:
+class TestFolderModel:
 
     def test_subclass(self):
         assert issubclass(Folder, BaseModel)

@@ -5,13 +5,15 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 from tests.factories import (
     UserFactory,
-    FolderFactory
+    FolderFactory,
+    FileFactory
 )
 
 
 register(UserFactory, 'user')
 register(UserFactory, 'second_user')
 register(FolderFactory, 'folder')
+register(FileFactory, 'file')
 
 
 def create_client(user):

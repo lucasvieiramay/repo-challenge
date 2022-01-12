@@ -136,3 +136,9 @@ REST_FRAMEWORK = {
 AUTH_USER_MODEL = 'users.User'
 API_PATH = 'api/v1/'
 APPEND_SLASH = False
+
+# Base url to serve media files
+MEDIA_URL = '/media/'
+
+# Path where media is stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

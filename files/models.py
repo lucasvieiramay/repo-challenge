@@ -10,7 +10,7 @@ class File(BaseModel):
         db_table = 'FILE'
 
     def __str__(self):
-        return f'{self.name} - {self.folder}'
+        return f'{self.django_filefield.name} - {self.folder}'
 
     @property
     def breadcumb(self):
