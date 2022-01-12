@@ -4,12 +4,14 @@ from rest_framework.test import APIClient
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from tests.factories import (
-    UserFactory
+    UserFactory,
+    FolderFactory
 )
 
 
 register(UserFactory, 'user')
 register(UserFactory, 'second_user')
+register(FolderFactory, 'folder')
 
 
 def create_client(user):
