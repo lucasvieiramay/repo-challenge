@@ -10,6 +10,7 @@ api_path = settings.API_PATH
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(api_path + 'users/', include('users.urls')),
+    path(api_path + 'folders/', include('folders.urls')),
     path(api_path + 'token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path(api_path + 'token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 
