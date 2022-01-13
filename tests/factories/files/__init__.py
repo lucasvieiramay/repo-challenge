@@ -8,3 +8,4 @@ class FileFactory(factory.django.DjangoModelFactory):
 
     folder = factory.SubFactory('tests.factories.folders.FolderFactory')
     django_filefield = factory.django.FileField(data='data')
+    user = factory.SubFactory('tests.factories.users.UserFactory')

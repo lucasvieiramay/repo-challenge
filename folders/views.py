@@ -15,6 +15,7 @@ class FolderViewSet(ModelViewSet):
     def create(self, request):
         serializer = FolderCreateSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+        # TODO: Receive the parent_folder to bound the folder into a diretory
         folder = Folder.objects.create(
             user=request.user, name=serializer.data['name'])
         return Response(FolderReadSerializer(folder).data, status=HTTP_201_CREATED)
