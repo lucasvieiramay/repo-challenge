@@ -1,4 +1,6 @@
 from pathlib import Path
+from datetime import timedelta
+
 import environ
 import os
 
@@ -142,3 +144,13 @@ MEDIA_URL = '/media/'
 
 # Path where media is stored
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+JWT_EXPIRATION_UNIT = os.environ.get('JWT_EXPIRATION_UNIT', "days")
+JWT_EXPIRATION_DELTA = int(os.environ.get('JWT_EXPIRATION_DELTA', 3))
+JWT_REFRESH_EXPIRATION_DELTA = int(os.environ.get('JWT_REFRESH_EXPIRATION_DELTA', 14))
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(**{JWT_EXPIRATION_UNIT: JWT_EXPIRATION_DELTA}),
+    'REFRESH_TOKEN_LIFETIME': timedelta(**{JWT_EXPIRATION_UNIT: JWT_EXPIRATION_DELTA}),
+    'ROTATE_REFRESH_TOKENS': True,
+}

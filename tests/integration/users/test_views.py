@@ -4,7 +4,7 @@ import pytest
 pytestmark = pytest.mark.django_db
 
 
-class TestUsersApi:
+class TestUserViewSet:
 
     def test_users_me(self, api_client):
         user = api_client.user
