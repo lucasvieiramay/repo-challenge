@@ -21,6 +21,10 @@ class FolderViewSet(ModelViewSet):
         return Response(FolderReadSerializer(folder).data, status=HTTP_201_CREATED)
 
     def list(self, request):
+        # TODO: Get only root folders
         queryset = Folder.objects.filter(user=request.user)
         serializer = self.serializer_class(queryset, many=True)
         return Response(serializer.data)
+
+    def retrieve(self, request, pk=None):
+        pass

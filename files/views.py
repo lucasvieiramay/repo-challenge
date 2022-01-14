@@ -21,9 +21,11 @@ class FileViewSet(ModelViewSet):
         serializer = FileCreateSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        folder = get_object_or_404(Folder, pk=request.data['folder'])
-        if folder.user != request.user:
-            return Response(status=HTTP_403_FORBIDDEN)
+        folder = None
+        if request.data.get('folder'):
+            folder = get_object_or_404(Folder, pk=request.data.get('folder'))
+            if folder.user != request.user:
+                return Response(status=HTTP_403_FORBIDDEN)
 
         file_obj = File.objects.create(
             user=request.user,
