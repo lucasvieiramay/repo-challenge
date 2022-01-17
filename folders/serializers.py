@@ -14,3 +14,4 @@ class FolderReadSerializer(serializers.ModelSerializer):
 
 class FolderCreateSerializer(serializers.Serializer):
     name = serializers.CharField(default='Untitled Folder')
+    parent_folder = serializers.UUIDField(default=None)
