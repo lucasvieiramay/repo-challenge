@@ -1,4 +1,3 @@
-from rest_framework.status import HTTP_201_CREATED
 from rest_framework.status import HTTP_403_FORBIDDEN
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ViewSet
