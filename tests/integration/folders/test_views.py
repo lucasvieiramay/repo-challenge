@@ -1,4 +1,3 @@
-from pyparsing import opAssoc
 import pytest
 
 

@@ -12,6 +12,7 @@ urlpatterns = [
     path(api_path + 'users/', include('users.urls')),
     path(api_path + 'folders/', include('folders.urls')),
     path(api_path + 'files/', include('files.urls')),
+    path(api_path + 'directories/', include('directories.urls')),
     path(api_path + 'token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path(api_path + 'token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ]
