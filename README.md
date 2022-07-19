@@ -1,6 +1,4 @@
-# ClickSign challenge app 
-
-This is an technical test for Clicksign python developer job
+# Repo challenge app 
 
 **Python 3.9, Django 4**
 
@@ -17,8 +15,8 @@ It is best to use the python `pyenv` tool to build locally:
 
 ```sh
 $ pyenv install 3.9.0
-$ pyenv virtualenv 3.9.0 clicksign
-$ pyenv activate clicksign
+$ pyenv virtualenv 3.9.0 venv
+$ pyenv activate repo
 $ pip install -r requirements.txt
 $ python manage.py runserver
 ```
@@ -31,7 +29,7 @@ Don't forget to set your own `.env` file at the project's root
 ```sh
 DEBUG=True
 SECRET_KEY=django-insecure-x!+9pi5cipa(ehg6ljfd_w&emzbtbmp$hp-jjlkix9+dz_pimg
-DATABASE_URL=sqlite://///Users/yourname/projects/clicksign.sqlite
+DATABASE_URL=sqlite://///Users/yourname/projects/repo.sqlite
 ```
 
 ## Create a root user
